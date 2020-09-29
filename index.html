@@ -1,0 +1,589 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- <meta http-equiv="imagetoolbar" content="no"> -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>비에프월드</title>
+<link rel="stylesheet" href="./css/default.css">
+<link rel="stylesheet" href="./css/latest_style.css">
+<link rel="stylesheet" href="./css/default_layout.css">
+<link rel="stylesheet" href="./css/default_top_menu.css">
+<link rel="stylesheet" href="./css/default_board.css">
+<link rel="stylesheet" href="./css/slick.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+
+<!--[if lte IE 8]>
+<script src="http://bfworld.org/js/html5.js"></script>
+<![endif]-->
+
+
+<script src="../js/jquery-1.8.3.min.js"></script>
+<script src="./js/jquery.menu.js"></script> 
+<script src="./js/common.js"></script>
+<script src="./js/jquery.bxslider.js"></script>
+<script src="./js/slick.js"></script>
+
+
+<!-- Theme Color  -->
+<style type="text/css">
+	a:hover{color:#9d56b6} /* Link rollover color */
+	#tnb {} /* Top tnb color */
+	#tnb .tnb_admin a{color:#990000;}
+
+	/* Main menu color */
+	.gnb_1da {color:#333;}
+	.gnb_1dli .on a{color:#9d56b6 !important}
+
+	/* Category color */
+	#container_title_sub .on{color:#9d56b6;}
+	#con_wrap{border-bottom:4px solid #9d56b6;}
+
+	/* MAIN BANNER */
+	.main-visual{position:relative; overflow:hidden; height:430px;}
+	.main-banner{position:relative; left:50%; margin-left:-1000px; width:2000px;}
+
+	/* PAGER */
+	.bx-wrapper .bx-pager { position: relative; bottom: 50px; z-index: 51; width:100%; text-align:center;}
+	.bx-wrapper .bx-pager.bx-default-pager a { background: #e0d6e9; text-indent: -9999px; display: block; width: 15px; height: 15px; margin: 10px 0px; outline: 0; -moz-border-radius: 13px; -webkit-border-radius: 13px; border-radius: 13px; }
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active{ background: #9d56b6; }
+	.bx-wrapper .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item { vertical-align: bottom; *zoom: 1; *display: inline; }
+	.bx-wrapper .bx-pager-item { font-size: 0; line-height: 0; display:inline-block; margin:0 5px;}
+
+	/* DIRECTION CONTROLS (NEXT / PREV) */
+	.main-banner_btn-prev {left:calc(50% - 550px);}
+	.main-banner_btn {background: none; border: 0; position: absolute; font-size: 40px; top:calc(50% - 35px); color: #fff; z-index: 99; text-shadow:1px 1px 1px #000;}
+	.main-banner_btn-next {right: calc(50% - 550px);}
+	.bx-wrapper .bx-controls-direction a { position: absolute; top: 60%; margin-top: -16px;  width: 15px; height: 20px; text-indent: -9999px; z-index: 9999; }
+	.bx-wrapper .bx-controls-direction a.disabled { display: none; }
+	.bx-next,.bx-prev {text-indent: -9999px; display:block; position:absolute; top:0; width:100%; height:100%;}
+
+	/* BOTTOM DIRECTION DONTROLS (NEXT / PREV) */
+	.main-banner2{position:relative; clear:both; width:1100px; margin:0 auto;}
+	.main-banner_btn-prev2 {left:0px;}
+	.main-banner_btn2 {background: none; border: 0; position: absolute; font-size: 40px; top: calc(50% - 18px); color: #fff; z-index: 99; text-shadow:1px 1px 1px #000;}
+	.main-banner_btn-next2 {right: 0px;}
+
+	/* AUTO CONTROLS (START / STOP) */
+	.bx-wrapper .bx-controls-auto { text-align: center; }
+	.bx-wrapper .bx-controls-auto .bx-start{display: block; margin: 0 3px; width:12px; height:17px; color:#fff; overflow:hidden;}
+	.bx-wrapper .bx-controls-auto .bx-start:before{content:"\f04b"; font-family:FontAwesome;}
+	.bx-wrapper .bx-controls-auto .bx-start:hover, .bx-wrapper .bx-controls-auto .bx-start.active, .bx-wrapper .bx-controls-auto .bx-start:focus { color:#00a7cb; }
+	.bx-wrapper .bx-controls-auto .bx-stop {display: block; margin: 0 3px; width:12px; height:17px; color:#fff; overflow:hidden; }
+	.bx-wrapper .bx-controls-auto .bx-stop:before{content:"\f04c"; font-family:FontAwesome;}
+	.bx-wrapper .bx-controls-auto .bx-stop:hover, .bx-wrapper .bx-controls-auto .bx-stop.active, .bx-wrapper .bx-controls-auto .bx-stop:focus { color:#00a7cb }
+
+	/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+	.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager { text-align: center; width: 100%; }
+	.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto { left: 50%; bottom: 97px; width: 37px; margin-left: -100px; z-index: 99; }
+
+		/* IMAGE CAPTIONS */
+	.bx-wrapper .bx-caption { position: absolute; bottom: 0; left: 0; background: #666; background: rgba(80, 80, 80, 0.75); width: 100%; }
+	.bx-wrapper .bx-caption span { color: #fff; font-family: Arial; display: block; font-size: .85em; padding: 10px; }
+	.bx-next,.bx-prev {text-indent: -9999px; display:block; position:absolute; top:0; width:100%; height:100%;}
+
+	.bo_fx{position:absolute; bottom:0; right:0; z-index:99;}
+	.btn_bo_user{margin:10px auto;width:100px}
+	.btn_bo_user a{padding:7px 10px;}
+
+	/* 메인컨텐츠 */
+	.line_wrap{background:#e0d6e9;}
+	.line_con{width:1100px; margin:0 auto; overflow:hidden;}
+	.line_con > a{display:block; float:left; width:calc(25% - 30px); margin-left:40px; text-align:center; color:#9d56b6; padding:40px 0;}
+	.line_con > a:first-child{margin-left:0;}
+	.line_con > a:hover{background:rgba(187, 155, 220, 0.2); transition:0.5s;}
+	.line_con > a:hover dt span{margin-right:30px; transition:0.5s;}
+	.line_con dl{}
+	.line_con dt{font-size:20px; line-height:120%; font-weight:600;}
+	.line_con dt > span{vertical-align:5px; margin-right:10px;}
+	.line_con dd{font-weight:600; margin-top:10px; padding-top:10px; border-top:1px solid #9d56b6; }
+
+	.main-center{width:1100px; margin:40px auto;}
+	.b_tit a{color:#9d56b6; text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;}
+	.late_gall{margin-bottom:20px;}
+	.late_gall > div{width:calc(50% - 10px); float:left; border:1px solid #d2d2d2;}
+	.late_gall .gall1{margin-right:20px; height:255px; overflow:hidden;}
+
+	.late_bbs{}
+	.late_bbs > div{float:left; margin-left:20px;}
+	.late_bbs .bbs1, .late_bbs .bbs2{width:calc(40% - 15px);}
+	.late_bbs .bbs3{width:calc(20% - 10px); height:257px; overflow:hidden;}
+	.late_bbs .bbs1{margin-left:0;}
+
+	.late_gall:after, .late_bbs:after{content:''; display:block; clear:both; width:100%;}
+
+
+</style>
+
+
+</head>
+<body>
+
+<!-- 상단 시작 { -->
+<div id ="hd_wrap">
+	<div id="hd">
+		<h1 id="hd_h1">비에프월드</h1>
+		<div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
+
+<div id="tnb">
+			<ul>
+				<li><a href="#">홈</a></li>
+				<li><a href="javascript:;">나의 후원내역</a></li>
+							</ul>
+		</div>
+		<div id="hd_wrapper">
+			
+<nav id="gnb">
+	<h2>메인메뉴</h2>
+	<div class="gnb_wrap">
+		<div id="logo2">
+			<a href="javascript:;"><img src="./img/logo.png" alt="비에프월드"></a>
+		</div>
+		<ul id="gnb_1dul">
+						<li class="gnb_1dli " style="z-index:999">
+				<a href="javascript:;" class="gnb_1da ">후원</a>
+				<span class="bg">하위분류</span><ul class="gnb_2dul">
+					<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">후원분야</a></li>
+									<li class="gnb_2dli"><a href="/javascript:;" class="gnb_2da">결제방법</a></li>
+				</ul>
+			</li>
+						<li class="gnb_1dli " style="z-index:998">
+				<a href="javascript:;" class="gnb_1da ">사업</a>
+				<span class="bg">하위분류</span><ul class="gnb_2dul">
+					<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">해외사업</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">국내사업</a></li>
+				</ul>
+			</li>
+						<li class="gnb_1dli " style="z-index:997">
+				<a href="javascript:;" class="gnb_1da ">소식</a>
+				<span class="bg">하위분류</span><ul class="gnb_2dul">
+					<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">스토리</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">프로젝트</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">보고서</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">소식지</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">공지사항</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">언론보도</a></li>
+				</ul>
+			</li>
+						<li class="gnb_1dli " style="z-index:996">
+				<a href="javascript:;" class="gnb_1da ">소개</a>
+				<span class="bg">하위분류</span><ul class="gnb_2dul">
+					<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">단체소개</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">비에프월드 봉사단</a></li>
+									<li class="gnb_2dli"><a href="javascript:;" class="gnb_2da">Best Friends</a></li>
+				</ul>
+			</li>
+						<li class="support_li">
+				<div class="line"></div>
+				<a href="javascript:;" class="support hovicon effect-4 sub-b">후원하기</a>
+				<div class="line right"></div>
+			</li>
+		</ul>
+		<div id="gnb_all">
+			<h2>전체메뉴</h2>
+			<ul class="gnb_al_ul">
+								<li class="gnb_al_li">
+					<a href="javascript:;" class="gnb_al_a">후원</a>
+					<ul>
+						<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 후원분야</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 결제방법</a></li>
+					</ul>
+				</li>
+								<li class="gnb_al_li">
+					<a href="javascript:;" class="gnb_al_a">사업</a>
+					<ul>
+						<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 해외사업</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 국내사업</a></li>
+					</ul>
+				</li>
+								<li class="gnb_al_li">
+					<a href="javascript:;" class="gnb_al_a">소식</a>
+					<ul>
+						<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 스토리</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 프로젝트</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 보고서</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 소식지</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 공지사항</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 언론보도</a></li>
+					</ul>
+				</li>
+								<li class="gnb_al_li">
+					<a href="javascript:;" class="gnb_al_a">소개</a>
+					<ul>
+						<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 단체소개</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> 비에프월드 봉사단</a></li>
+											<li><a href="javascript:;"><i class="fa fa-caret-right" aria-hidden="true"></i> Best Friends</a></li>
+					</ul>
+				</li>
+							</ul>
+			<button type="button" class="gnb_close_btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+		</div>
+	</div>
+</nav>		</div>
+
+	</div>
+</div>
+<!-- } 상단 끝 -->
+<hr>
+
+<!-- 콘텐츠 시작 { -->
+<div id="wrapper">
+
+	
+	<div id="container_wr">
+			<div id="main_container">
+
+<div class="main-visual">
+	<div class="main-banner">
+		<div class="main-banner_btn main-banner_btn-prev"><img src="./img/arrow_l.png"></div>
+		<div class="main-banner_btn main-banner_btn-next"><img src="./img/arrow_r.png"></div>
+
+		<ul id="bnSlider">
+						<li>
+									<a href="javascript:;" >						<img src="./img/banner1.png" alt="">
+					</a>							</li>
+						<li>
+									<a href="javascript:;" >						<img src="./img/banner2.png" alt="">
+					</a>							</li>
+					</ul>
+	</div>
+
+	
+</div>
+
+<div class="line_wrap">
+	<div class="line_con">
+		<a href="javascript:;" class="line_conbox">
+			<dl>
+				<dt><span><img src="./img/main-icon1.png"></span>정기후원</dt>
+				<dd>정기후원 바로가기</dd>
+			</dl>
+		</a>
+		<a href="javascript:;" class="line_conbox">
+			<dl>
+				<dt><span><img src="./img/main-icon2.png"></span>일시후원</dt>
+				<dd>일시후원 바로가기</dd>
+			</dl>
+		</a>
+		<a href="javascript:;" class="line_conbox">
+			<dl>
+				<dt><span><img src="./img/main-icon3.png"></span>해외아동결연</dt>
+				<dd>해외아동결연 바로가기</dd>
+			</dl>
+		</a>
+		<a href="javascript:;" class="line_conbox">
+			<dl>
+				<dt><span><img src="./img/main-icon4.png"></span>기업후원</dt>
+				<dd>기업후원 바로가기</dd>
+			</dl>
+		</a>
+	</div>
+</div>
+
+<div class="main-center">
+	<div class="late_gall">
+		<div class="gall1">
+<div class="pic_lt">
+	<ul>
+			<li>
+			<h3 class="b_tit"><a href="javascript:;">프로젝트</a></h3>
+			<a href="javascript:;" class="lt_img"><span class="no-img"><img src="./img/thumb-3103d370add7e385184c6e2dfbdc3986_1564465864_7891_530x250.png" alt="" width="530" height="250"></span></a>
+			<a href="javascript:;"> </a>			<!-- <span class="lt_date">2019-07-30</span> -->
+		</li>
+			</ul>
+	<a href="javascript:;" class="lt_more"><span class="sound_only">프로젝트</span><img src="./img/gall_plus.png"><span class="sound_only"> 더보기</span></a>
+
+</div>
+</div>
+		<div class="gall2">
+<div class="pic_lt">
+	<ul>
+			<li>
+			<h3 class="b_tit"><a href="javascript:;">스토리</a></h3>
+			<a href="javascript:;" class="lt_img"><span class="no-img"><img src="./img/thumb-ab5cdc95d2337cf476166949d6662c0a_1573112196_1554_530x250.jpg" alt="" width="530" height="250"></span></a>
+			<a href="javascript:;"> </a>			<!-- <span class="lt_date">2019-11-07</span> -->
+		</li>
+			</ul>
+	<a href="javascript:;" class="lt_more"><span class="sound_only">스토리</span><img src="./img/gall_plus.png"><span class="sound_only"> 더보기</span></a>
+
+</div>
+</div>
+	</div>
+	<div class="late_bbs">
+		<div class="bbs1">
+<div class="lat">
+	<h3 class="b_tit"><a href="javascript:;">공지사항</a></h3>
+	<ul>
+			<li>
+			<a href="javascript:;"> <strong>비에프월드 에스와티니 지부 설립</strong></a> 			<span class="lt_date">2019-10-31</span>
+		</li>
+			<li>
+			<a href="javascript:;"> 비에프월드 홈페이지 모바일 론칭 및 …</a> 			<span class="lt_date">2019-09-06</span>
+		</li>
+			<li>
+			<a href="javascript:;"> 비에프월드 홈페이지 모바일 론칭 및 …</a> 			<span class="lt_date">2019-08-17</span>
+		</li>
+			<li>
+			<a href="javascript:;"> 2019년도 정기총회 개최 공고</a> 			<span class="lt_date">2019-02-13</span>
+		</li>
+			<li>
+			<a href="javascript:;"> 2019년도 정기이사회 개최 공고</a> 			<span class="lt_date">2019-01-21</span>
+		</li>
+	
+		</ul>
+
+	<a href="javascript:;" class="lt_more"><span class="sound_only">공지사항</span><img src="./img/bo_plus.png"><span class="sound_only"> 더보기</span></a>
+</div></div>
+		<div class="bbs2">
+<div class="lat">
+	<h3 class="b_tit"><a href="javascript:;">언론보도</a></h3>
+	<ul>
+			<li>
+			<a href="javascript:;"> [온라인] 의양신문 / 의정부시 청소…</a> 			<span class="lt_date">2019-08-14</span>
+		</li>
+			<li>
+			<a href="javascript:;"> [동영상] 유튜브 / 블렛츠팡팡</a> 			<span class="lt_date">2019-08-12</span>
+		</li>
+			<li>
+			<a href="javascript:;"> [온라인] 경인종합일보 / 비에프월드…</a> 			<span class="lt_date">2019-08-12</span>
+		</li>
+			<li>
+			<a href="javascript:;"> [온라인] 경기북부시민신문 / 비에프…</a> 			<span class="lt_date">2019-08-12</span>
+		</li>
+			<li>
+			<a href="javascript:;"> [온라인] 경기북부시민신문 / 효봉이…</a> 			<span class="lt_date">2019-08-12</span>
+		</li>
+	
+		</ul>
+
+	<a href="javascript:;" class="lt_more"><span class="sound_only">언론보도</span><img src="./img/bo_plus.png"><span class="sound_only"> 더보기</span></a>
+</div></div>
+		<div class="bbs3">
+<div class="pic_lt2">
+	<ul>
+				<li>
+			<h3 class="b_tit"><a href="javascript:;">소식지</a></h3>
+			<a href="http://bfworld.org/bbs/board.php?bo_table=B24&amp;wr_id=54" class="lt_img2"><img src="./img/thumb-ab5cdc95d2337cf476166949d6662c0a_1573111913_0199_200x260.jpg" alt="" class =""></a>
+			<a href="javascript:;"> </a>	
+		</li>
+			</ul>
+
+</div>
+</div>
+	</div>
+
+</div>
+
+
+
+<div class="main-bottom">
+	<div class="late_box_center">
+		<div class="main-banner2">
+			<div class="main-banner_btn2 main-banner_btn-prev2"><img src="./img/btm_arrow_l.png"></div>
+			<div class="main-banner_btn2 main-banner_btn-next2"><img src="./img/btm_arrow_r.png"></div>
+
+			<ul id="bnSlider2-1">
+				<li><a href="javascript:;" ><img src="./img/1.png" alt="비바피오피"></a></li>
+				<li><a href="javascript:;" ><img src="./img/2.jpg" alt="건강놀이문화협동조합"></a></li>
+				<li><a href="javascript:;" ><img src="./img/3.jpg" alt="이디야(신곡점)"></a></li>
+				<li><a href="javascript:;" ><img src="./img/4.jpg" alt="한샘기전"></a></li>
+				<li><a href="javascript:;" ><img src="./img/5.jpg" alt="메이블룸"></a></li>
+				<li><a href="javascript:;" ><img src="./img/6.jpg" alt="한라태권도"></a></li>
+				<li><a href="javascript:;" ><img src="./img/7.jpg" alt="해법수학"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+	</div>
+</div>
+
+</div>
+<!-- } 콘텐츠 끝 -->
+
+<hr>
+
+<!-- 하단 시작 { -->
+<div id="ft">
+	<div id="ft_wr1">
+		<div id="ft_link">
+			<a href="javascript:;">이용약관</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="javascript:;">개인정보처리방침</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="javascript:;">위치 / 연락처</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="javascript:;">전체메뉴</a>
+
+			<div class="ft_link_r">
+				<!-- 통합검색 -->
+				<fieldset id="hd_sch">
+					<legend>사이트 내 전체검색</legend>
+					<form name="fsearchbox" method="get"onsubmit="return fsearchbox_submit(this);">
+					<input type="hidden" name="sfl" value="wr_subject||wr_content">
+					<input type="hidden" name="sop" value="and">
+					<label for="sch_stx" class="sound_only">검색어 필수</label>
+					<input type="text" name="stx" id="sch_stx" maxlength="20" placeholder="통합검색">
+					<button type="button" id="sch_submit" value="검색"> <i class="fa fa-search"></i><span class="sound_only">통합검색</span></button>
+					</form>
+
+					<script>
+					function fsearchbox_submit(f)
+					{
+						if (f.stx.value.length < 2) {
+							alert("검색어는 두글자 이상 입력하십시오.");
+							f.stx.select();
+							f.stx.focus();
+							return false;
+						}
+
+						// 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
+						var cnt = 0;
+						for (var i=0; i<f.stx.value.length; i++) {
+							if (f.stx.value.charAt(i) == ' ')
+								cnt++;
+						}
+
+						if (cnt > 1) {
+							alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
+							f.stx.select();
+							f.stx.focus();
+							return false;
+						}
+
+						return true;
+					}
+					</script>
+				</fieldset>
+				<!-- 통합검색 -->
+			</div>
+		</div>
+	</div>
+	<div id="ft_wr2">
+		<div id="ft_catch">
+						<div id="ft_add_wrap">
+				<div id="ft_add"><p>(11717) 경기도 의정부시 장곡로 217 광명비전센터 2층 210호</p><p>(사)비에프월드 | 대표자 최남수 | 사업자번호 : 127-82-19305</p></div>
+				<div id="ft_copy">Copyright &copy; 2019 비에프월드. All rights reserved.</div>
+				<div class="sns_wrap">
+					<a href="javascript:;"><img src="./img/sns1.png" alt="facebook"></a>
+					<a href="javascript:;"><img src="./img/sns2.png" alt="instagram"></a>
+					<a href="javascript:;"><img src="./img/sns3.png" alt="youtube"></a>
+					<a href="javascript:;"><img src="./img/sns4.png" alt="kakaotalk"></a>
+					<a href="javascript:;"><img src="./img/sns5.png" alt="해피빈"></a>
+				</div>
+			</div>
+			<div class="info_right">
+				<strong>- 문의 안내</strong><br>
+				<span class="c_lilac">대표전화</span> : 031-873-1691 | <span class="c_lilac">팩스</span> : 031-873-1692<br>
+				<span class="c_lilac">운영시간</span> : 오전 9 : 00 ~ 오후 6 : 00 (토 / 공휴일 휴무)
+			</div>
+		</div>
+		
+		</div>
+	<button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
+</div>
+
+<script>
+
+    /* 메인 배너 */
+    var bnSlider = $('#bnSlider').bxSlider({
+        //autoHover: true,
+        //pagerSelector: '.selector', //셀렉터에 pager를 $selector에 append
+        //autoControls: true, //재생 정지버튼
+        //autoControlsSelector: '.selector', //재생,정지버튼을 $selector에  append
+        mode:'fade',
+        //tickerHover: true,
+        //autoHover:true,
+        auto:true,
+        controls:true,
+        pause: 3000,
+		pager: true,
+        //autoControls: true, //재생,정지버튼
+        prevSelector: '.main-banner_btn-prev',
+        nextSelector: '.main-banner_btn-next'
+	});
+
+    //slide way
+    var $nav = $("#gnb")
+    var $nav_list = $(".gnb_1dli > a");
+    $nav_list.on("mouseover focus", function(e) {
+        $nav.addClass("on");
+    });
+    $nav.on("mouseleave", function(e) {
+        $nav.removeClass("on");
+    });
+    $(".gnb_2dli:last > a").on("blur", function() {
+        $nav.removeClass("on");
+    });
+
+	/* 하단 배너 */
+    var bnSlider2 = $('#bnSlider2-1').bxSlider({
+        auto:true,
+        controls:true,
+        pause: 3000,
+		pager: false,
+		slideWidth:186,
+		slideMargin : 20,
+		moveSlides: 1,
+		minSlides : 5,
+		maxSlides : 5,
+        prevSelector: '.main-banner_btn-prev2',
+        nextSelector: '.main-banner_btn-next2'
+    });
+
+	$(function() {
+		$("#top_btn").on("click", function() {
+			$("html, body").animate({scrollTop:0}, '500');
+			return false;
+		});
+	});
+
+
+	$(function() {
+		$("#top_btn").on("click", function() {
+			$("html, body").animate({scrollTop:0}, '500');
+			return false;
+		});
+
+		$(".family_tit").on("click",function(){
+
+			if($(".family_more").hasClass("hidden"))
+				$(".family_more").removeClass("hidden");
+			else
+				$(".family_more").addClass("hidden");
+		});
+	});
+
+</script>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+$(function() {
+	// 폰트 리사이즈 쿠키있으면 실행
+	font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+</body>
+</html>
+
+

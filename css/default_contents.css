@@ -1,0 +1,286 @@
+@charset "utf-8";
+
+
+/* 간격은 40px씩 */
+/*뷰보드 공통 시작 ===================================================================*/
+.view_bo_con {}
+.view_bo_con_location{font-size:14px;} /* 오시는길 5번스타일영향으로 지도출력 안되서 따로 뺌 */
+.con-gap1{margin-top:80px;} /* 뷰보드 내용간 간격, 안에 소제목이랑 내용 포함 */
+.con-gap2{margin-top:13px;} /* 원래30px */
+.con-gap3{margin-top:20px;} /* con-gap1 안에 단락 간 간격, 내용만 */
+.con-gap30{margin-top:30px;}
+
+.mar-b20{margin-bottom:20px;}
+
+/*컨텐츠 소제목*/
+.s1hd{font-size:24px; font-weight:600; line-height:24px; color:#3b3737; margin-bottom:30px; position:relative; text-align:center;}
+.s1hd span{background:#fff; padding:0 10px; position:relative;}
+
+/*그라데이션
+ .s1hd span{background: #55ffaa; padding:0 10px; position:relative;
+    background: -webkit-linear-gradient(left, #8648af, #1f2c99);
+    background: -moz-linear-gradient(right, #8648af, #1f2c99);
+    background: -o-linear-gradient(right, #8648af, #1f2c99);
+    background: linear-gradient(to right, #8648af, #1f2c99);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;}*/
+
+.s1hd:after{content:''; width:10px; height:10px; background:#9d56b6; position:absolute; top:8px; left:2px; transform:rotate(45deg);}
+.s1hd:before{content:''; width:50%; height:1px; background:#9d56b6; position:absolute; top:13px; left:0;}
+/* .s1hd:first-child{margin-top:0}      처음 시작하는 상단마진 없을때 쓰기*/
+
+.s2hd{font-size:18px; margin-bottom:20px; font-weight:normal;}
+.s2hd:before{content:''; width:12px; height:12px; background:#9d56b6; display:inline-block; margin-right:10px; margin-left:2px; vertical-align:2px; transform:rotate(45deg); }
+
+.block{display:block;} /* 블록 */
+.inline{display:inline-block;} /* 인라인블록 */
+.alt-hide {overflow: hidden; width: 0px; height: 0px;} /* alt hidden */
+.caution{color:#e02a25;} /* 주의문구 */
+
+/* 컨텐츠 들여쓰기 간격 */
+.indent20{padding-left:20px;}
+
+/* 컨텐츠 글자 컬러 */
+.c-blue{color:#014d99;}
+.c-purple{color:#9d56b6;}
+
+/* 컨텐츠내 이미지 */
+.con-img{text-align:center;}
+.first-m{margin-left:0 !important;}
+.first-p{padding-left:0 !important;}
+.wd50{width:calc(50% - 3px); display:inline-block;}
+.wd33{width:356px; display:inline-block;}
+.wd25{width:263px; display:inline-block;}
+
+
+
+/* 불릿기호 리스트 */
+.list-ul1{}
+.list-ul1 li{padding-left:10px; margin:5px 0;}
+.list-ul1 li:before{content:''; display:inline-block; vertical-align:4px; margin-right:5px; width:5px; height:2px; background:#a184ab;}
+.list-ul1 li ul li strong{margin:10px 0 5px;}
+
+.list-ul2{}
+.list-ul2 li{position:relative; padding-left:10px; margin:5px 0;}
+.list-ul2 li:before{content:''; display:inline-block; vertical-align:middle; margin-right:5px; width:3px; height:3px; background:#474747; border-radius:20px;}
+
+.list-ul3{}
+.list-ul3 li{position:relative; padding-left:10px; margin:5px 0;}
+.list-ul3 li:before{content:''; display:inline-block; vertical-align:middle; margin-right:5px; width:2px; height:2px; background:#b1b1b1;}
+
+/* 테이블 */
+.con-tbl {border-spacing: 0px; border-collapse: collapse; text-align:center; width:calc( 100% - 1px );}
+.con-tbl caption{position:absolute; top:-5000px; left:0; text-indent:-99999px;}
+.con-tbl thead th{background:#fafafa; border:1px solid #ddd; border-top:2px solid #9d56b6; padding:10px;}
+.con-tbl tbody th{background:#fafafa; border:1px solid #ddd;  padding:10px;}
+.con-tbl tbody tr:first-child th{border-top:2px solid #9d56b6;}
+.con-tbl tbody td{border:1px solid #ddd; text-align:center; background:#fff; padding:10px;}
+.con-tbl tbody tr:first-child td{border-top:2px solid #9d56b6;}
+
+/* 다운로드버튼 */
+.down-btn {background: #9d56b6; color: #fff; padding: 10px 20px; font-size: 14px; font-weight: 600; text-align: center; border-radius: 5px; border:1px solid #9d56b6;}
+.s-btn{background: #9d56b6; color: #fff; padding: 5px 20px; font-size: 14px; font-weight: 600; text-align: center; border-radius: 5px; display: inline-block; border:1px solid #9d56b6;}
+.m-btn{background: #9d56b6; color: #fff; padding: 10px 30px; font-size: 19px; font-weight: 600; text-align: center; border-radius: 5px; display: inline-block; border:1px solid #9d56b6;}
+.wide-btn{background: #9d56b6; color: #fff; padding: 10px 30px; font-size: 19px; font-weight: 600; text-align: center; border-radius: 5px; display: inline-block; border:1px solid #9d56b6;}
+.down-btn:hover, .m-btn:hover, .wide-btn:hover, .s-btn:hover{background:#754586  !important; border-color:#754586 ; color:#fff !important; transition: all ease-out 0.5s;}
+
+/* box */
+.box{padding:20px; border:1px solid #ddd; background:#fafafa; border-radius:5px; text-align:center;} /* 회색줄, 회색배경 */
+.box2{padding:20px; background:#ebebeb; border-radius:5px;} /* 회색배경 */
+
+/* font size */
+.f15{font-size:15px;}
+.f16{font-size:16px;}
+.f18{font-size:18px;}
+.f20{font-size:20px;}
+
+.align-left{text-align:left !important;}
+
+/* 뷰보드 내 탭메뉴 */
+.tabs{overflow:hidden; position:relative; background:#494949;}
+ul.tabs li{padding: 10px 0;float:left; cursor: pointer; color:#fff; border-left:1px solid #fff; width:220px; text-align:center;}
+ul.tabs li:first-child{padding-left:21px !important; border-left:0;}
+ul.tabs li:hover{background-color:#9d56b6; transition: all ease-out 0.5s;}
+#tab_1, #tab_2{clear:both;}
+ul.tabs li.current{background:#9d56b6;}
+.tab_content{display: none;}
+.tab_content.current{display: inherit;}
+.tab_content strong{font-size:18px; line-height:120%;}
+/*뷰보드 공통 끝 ===================================================================*/
+
+
+
+/*이용약관*/
+.level1_0{font-size:22px; font-weight:normal; margin-top:100px; border-bottom:1px dashed #d2d2d2; padding-bottom:20px;}
+.level1_0:first-child{margin-top:20px;}
+.level1_1{font-size:20px; font-weight:600; margin-top:50px; margin-bottom:20px;}
+/*.level1_1:first-child{margin-top:0px;}*/
+.level1_2{font-size:16px; font-weight:600; margin-top:20px; margin-bottom:10px;}
+.level1_3{text-indent:-18px; padding-left:18px; margin-bottom:5px;}
+.level1_4{text-indent:-18px; padding-left:28px;  margin-bottom:5px;}
+
+/*개인정보처리방침*/
+.level2_0{margin-top:50px;}
+.level2_0_1{margin-top:20px;}
+.level2_1{font-size:20px; font-weight:600; margin-top:50px; margin-bottom:20px;}
+.level2_1:first-child{margin-top:0px;}
+.level2_2{font-size:16px; font-weight:600; margin-top:20px; margin-bottom:10px;}
+/* .level2_2{text-indent: -19px; padding-left: 19px;font-weight:600; margin-top:10px; margin-bottom:5px;} */
+.level2_2_1{font-weight:600; margin-top:10px; margin-bottom:5px;}
+.level2_3{text-indent:-16px; padding-left:16px; margin-top:10px; margin-bottom:5px; font-weight:600;}
+.level2_3:first-child{margin-top:0;}
+.level2_3_1{padding-left:10px;}
+.level2_4{text-indent:-18px; padding-left:28px; margin-top:10px; margin-bottom:5px;}
+.level2_4_1{text-indent:-18px; padding-left:28px;  margin-bottom:5px;}
+
+/* 이용/처리방침 리스트 */
+.level-ul1{}
+.level-ul1 > li{margin:10px 0; padding-left:35px; text-indent:-31px;}
+.level-ul1 > li:before{content:''; display:inline-block; vertical-align:4px; margin-right:10px; width:6px; height:2px; background:#9d56b6;}
+.level-ul1 > li .in_li-tit{display:inline-block; padding-left:15px; width:calc(100% - 15px);}
+.level-ul1 > li ul li strong{margin:10px 0 5px;}
+
+.level-ul2{margin-top:10px; margin-left:-15px;}
+.level-ul2 li{position:relative; margin:5px 0; padding-left:14px; text-indent:-14px;}
+.level-ul2 li:first-child{margin-top:0;}
+.level-ul2 li:last-child{margin-bottom:0;}
+/* .level-ul2 li:before{content:''; display:inline-block; vertical-align:4px; margin-right:5px; width:3px; height:3px; background:#474747; border-radius:20px;} */
+
+
+.board-title{margin-bottom:60px; text-align:center;}
+.hu-box1{font-size:16px; text-align:center; border:0; background:none; padding:0;}
+.box.use16{font-size:16px;}
+
+/* 사업 - 해외사업 - 교육지원사업 */
+.b11 .wd33{margin-left:10px;}
+.b11 .wd25{margin-left:10px;}
+.b11 .school span{display:inline-block; width:calc(55% - 3px); vertical-align:middle;}
+.b11 .school p{display:inline-block; width:calc(45% - 23px); vertical-align:middle; margin-left:20px; text-align:left;}
+
+/* 사업 - 해외사업 - 아동보호사업 */
+.b11 .b11_support{}
+.b11 .b11_support:after{content:''; clear:both; width:100%; display:block;}
+.b11 .b11-2state .align-right{text-align:right; font-size:13px;}
+.b11 .b11-2state dl{display:inline-block; text-align:center; border:1px solid #d2d2d2; padding:20px; margin-top:10px;}
+.b11 .b11-2state dl:nth-child(-n+5){margin-top:0;}
+.b11 .b11-2state dl.wd25{width:263px;}
+.b11 .b11-2state dt{border:1px solid #d2d2d2; display:inline-block;}
+.b11 .b11-2state dd{ margin-top:20px;}
+.b11 .b11-2state dd .c-purple{font-weight:600; font-size:16px;}
+.b11 .m-btn-wr{text-align:center; margin-top:50px;}
+
+/* 사업 - 해외사업 - 긴급구호사업 */
+.b11 .b11-5_dlwr{}
+.b11 .b11-5_dlwr dl{margin-bottom:20px;}
+.b11 .b11-5_dlwr dl:last-child{margin-bottom:0;}
+.b11 .b11-5_dlwr dt{display:inline-block; vertical-align:middle;}
+.b11 .b11-5_dlwr dd{display:inline-block; max-width:920px; margin-left:50px; vertical-align:middle;}
+.b11 .b11-5_dlwr dd .b11-5tit{display:block;}
+
+
+/* 사업 - 해외사업 - 해외봉사단 */
+.b11 .b11-6_dlwr{}
+.b11 .b11-6_dlwr dl{margin-bottom:20px;}
+.b11 .b11-6_dlwr dl:last-child{margin-bottom:0;}
+.b11 .b11-6_dlwr dl.wd50{display:inline-block;}
+.b11 .b11-6_dlwr dt{display:inline-block; vertical-align:top;}
+.b11 .b11-6_dlwr dd{display:inline-block; width:275px; margin:0 20px; vertical-align:top;}
+.b11 .b11-6_dlwr dd .b11-6tit{display:block;}
+
+.b11-6_hiswr{background:url("/theme/basic/img/pub/b11-6_hiswr1.png") no-repeat top right, url("/theme/basic/img/pub/b11-6_hiswr2.png") no-repeat bottom right; position:relative; overflow:hidden; height:660px; background-size:33%;}
+.b11-6_hiswr-tit{background:url("/theme/basic/img/pub/b11-6_hiswr-tit.png") no-repeat; background-size:cover; font-size:40px; line-height:120%; color:#fff; font-weight:900; display:inline-block; padding:68px 50px; position:relative; width:235px; height:235px;}
+.b11-6_hiswr-tit:after{content:''; background:url("/theme/basic/img/pub/b11-6_hiswr-tit2.png") no-repeat; display:inline-block; width:40px; height:10px; position:absolute; right:-39px; top:calc(50% - 5px);}
+.b11-6_hiswr ul{margin-left:50px; position:absolute; left:218px; top:123px; padding:70px 0 20px;}
+.b11-6_hiswr ul:after{content:''; display:block; width:1px; height:100%; border:1px dashed #d2d2d2; position:absolute; top:0; }
+.b11-6_hiswr ul .b11-6_his-yr{background:#605ca8; color:#fff; padding:5px 20px; border-radius:20px; display:inline-block; margin-right:20px; margin-left:-33px; position:relative; z-index:1; font-size:15px;}
+.b11-6_hiswr ul li{ margin:20px 0;}
+
+/* 사업 - 국내사업 - 화요사랑의식탁 */
+.b12 .wd33{margin-left:10px;}
+.b12 .wd50{}
+.b12-2wr{background:url("/theme/basic/img/pub/b12-2wr.png") no-repeat; background-size:cover; padding:100px;}
+.b12-2wr dl{display:inline-block; width:calc(50% - 3px); text-align:center;}
+.b12-2wr dt{font-size:26px; font-weight:600; color:#fff; line-height:200%; margin-bottom:30px;}
+.b12-2wr dd{color:#c165e2; line-height:200%; font-size:20px;}
+.b12-2wr dd strong{font-size:60px;}
+.b12-2wr p{margin:50px 0; font-size:22px; line-height:200%; color:#fff; text-align:center;}
+.b12-2wr ul li{display:inline-block; width:calc(33% - 3px); text-align:center;}
+.b12-2wr-btn{display:block; margin:50px auto 0; text-align:center;}
+.b12-2wr-btn .m-btn{ width:350px;}
+
+/* B.F.Shop */
+.b12 .wd50{width: 542px; display: inline-block; margin-left: 10px;}
+
+/* CI */
+.b31 .ci-expla-wr{}
+.b31 .ci-expla-img{display:inline-block; vertical-align:top;}
+.b31 .ci-expla{display:inline-block; width:590px; vertical-align:top; margin-left:20px;}
+.b31 .ci-expla h4{font-size:28px; line-height:34px; color:#636363; margin-bottom:30px;}
+.b31 .ci-expla h4 .c-purple{font-size:38px;}
+.b31 .ci-expla dl{}
+.b31 .ci-expla dt{display:inline-block; vertical-align:middle; color:#fff; background:#9d56b6; border-radius:50%; width:50px; height:50px; line-height:50px; text-align:center; position:relative; font-weight:900; font-size:20px;}
+.b31 .ci-expla dt:after{content:''; width:40px; height:40px; border:1px solid #fff; border-radius:50%; position:absolute; left:5px; top:5px;}
+.b31 .ci-expla dd{display:inline-block; vertical-align:middle; width:510px; margin:10px 0 10px 10px;}
+.b31 .bg-purple{background:#bc99c1; display:inline-block; padding:2px; color:#fff;}
+
+.b31 .c-type-wr{}
+.b31 .c-type-wr dl{display:inline-block; width:266px; margin-left:6px;}
+.b31 .c-type-wr dt{width:100%; height:40px; margin-bottom:20px;}
+.b31 .c-type-wr dd{}
+.b31 .c-type-wr .type1{background:#bc99c1}
+.b31 .c-type-wr .type2{background:#d9c7df}
+.b31 .c-type-wr .type3{background:#6c6a6b}
+.b31 .c-type-wr .type4{background:#72635b}
+
+.b31 .ci-btn-wr{text-align:center;}
+
+/* 단체소개 - 소개 */
+.b31-1wr{}
+.b31-1tit{text-align:center;}
+.b31-1tit .b31-1tit2{margin:30px 0;}
+.b31-1wr .youtube-wr{display:inline-block; vertical-align:top;}
+/*.b31-1wr .text-wr{display:inline-block; width:510px; vertical-align:top; margin-left:20px; line-height:225%;}*/
+.b31-1wr .text-wr{display:inline-block; width:510px; vertical-align:top; margin-left:20px; line-height:193%;}
+
+.b31 .vi2025-wr{background:#ebebeb;}
+.b31 .vi2025-wr li.wd25{margin:20px 0; display:inline-block; text-align:center; border-left:1px solid #bac1c6; width:calc(25% - 4px);}
+.b31 .vi2025-wr li.first-m{border-left:0;}
+.b31 .vi2025-wr li .vi2025-tit{margin-top:20px; font-size:20px; line-height:120%; margin-bottom:5px;}
+.b31 .vi2025-wr li .c-purple{font-size:20px; line-height:120%;}
+
+/* 단체소개 - 인사말 */
+.b31-2img{display:inline-block; vertical-align:top;}
+.b31-2txt-wr{display:inline-block; width:770px; margin-left:20px; vertical-align:top;}
+.b31-2tit{font-size:25px; line-height:120%; position:relative; font-weight:600; padding-top:20px;}
+.b31-2tit:before{content:''; width:22%; height:5px; background:#8629a7; position:absolute; top:0px; left:0;}
+.b31-2tit_sub{font-size:25px; line-height:120%; margin:10px 0 20px; font-weight:600;}
+
+/* 단체소개 - 해외지부 */
+.b42 .branch-align-l td{text-align:left;}
+
+/* 오시는길 */
+.b31 .b31-8-wr .con-tbl th{width:250px;}
+.b31 .b31-8-wr .con-tbl td{text-align:left;}
+
+/* 봉사단 */
+.b32 .wd25{margin-left:10px;}
+
+
+
+/* 후원분야 공통 */
+.support-all{display:flex; display:-ms-flexbox;}
+
+.img-area{width:358px; display:flex; display:-ms-flexbox;flex-direction: column;}
+.img-area > img:first-child{margin-bottom:10px;}
+
+.txt-area-wr{margin-left:20px; width:722px;display:flex; display:-ms-flexbox; flex-direction: column; justify-content: center; }
+.txt-area-wr .box{height:100%;}
+.txt-area-center{display:flex; display:-ms-flexbox; flex-direction: column; align-items: center;}
+.txt-icon{margin-bottom:20px;}
+.txt-area{display:flex; display:-ms-flexbox; display: flex; flex-direction: column; justify-content: center;}
+.txt-area h5{font-size:18px; line-height:120%; font-weight:normal; margin-bottom:20px;}
+.txt-area .list-ul1 {/* text-align:left; */ margin-top:20px;}
+
+/* 결제방법 */
+.b02 .con-tbl tbody td{text-align:left;}
